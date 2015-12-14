@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="publicIndexApp">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- The Shiv HTML5 early browser fix -->
+    <!-- The next three lines are suppose to be commented and the Shiv will still work -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+	<title>Public Content</title>
+
+    <!-- CSS Stylesheets--> 
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <!-- End of CSS Stylesheets -->
+
+</head>
+<body class="node">
+    <div>
+        <header>
+            <h3>START: Node Header</h3>
+            <div ng-include="'/angular/fragments/angularfragment.html'"></div>
+            <center>
+                <h3>
+                    <a href="/login" class="btn btn-default btn-sm">Login</a>
+                    <a href="/signup" class="btn btn-default btn-sm">Signup</a>
+                    <h1>
+                        PUBLIC HOMEPAGE
+                    </h1>
+                </h3>
+            </center>
+            <h3>END: Node Header</h3>
+        </header>
+        <hr>
+        <div ng-view></div>
+        <hr>
+        <footer>
+            <h3>START: Node Footer</h3>
+            Node Footer Content
+            <h3>End: Node Footer</h3>
+        </footer>
+    </div>
+
+    <!-- Start of JavaScript Files-->
+    <!-- Angular Library files LOCAL COPY -->
+    <script type="text/javascript" src="/lib/angularlib/angular.min.js"></script>
+    <script type="text/javascript" src="/lib/angularlib/angular-route.min.js"></script>
+    <!-- End of Angular Library files LOCAL COPY -->
+
+    <!-- ANGULARJS Application Files-->
+    <script type = "text/javascript" src="/angular/js/publicIndexApp.js"></script>
+    <script type = "text/javascript" src="/angular/js/publicIndexControllers.js"></script>
+    <!-- End of ANGULARJS Application Files-->
+    <!-- End of "text/JavaScript" Files -->
+    
+</body>
+</html>

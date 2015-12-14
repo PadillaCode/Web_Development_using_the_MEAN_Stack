@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- The Shiv HTML5 early browser fix -->
+    <!-- The next three lines are suppose to be commented and the Shiv will still work -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js" />
+    <![endif]-->
+
+    <title>Inventory Content</title>
+
+    <!-- CSS Stylesheets--> 
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <!-- End of CSS Stylesheets -->
+
+</head>
+    <body class="node">
+        <header>
+            <h1>Inventory Manager</h1>
+            <br>
+        <nav>
+            <a href="/admin" class="btn btn-default btn-sm">Admin Home</a>
+            <a href="/admin/inventory" class="btn btn-default btn-sm nav_selected">Inventory</a>
+            <a href="/logout/admin" class="btn btn-default btn-sm">Logout</a>
+        </nav>
+        <br>
+        </header>
+        <section>
+
+            <table>
+                <thead>
+                    <tr>
+                        <td><h3>Product Photo</h3></td>
+                        <td><h3>Item Name</h3></td>
+                        <td><h3>Quantity</h3></td>
+                        <td><h3>Description</h3></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% if (items !== null && items !== undefined) { %>
+                        <%for (i = 0; i < items.length; i++) { %>
+                            <tr>
+                                <td><center><img src="<%= items[i].picture_url %>" /></center></td>
+                                <td><center><%= items[i].item_name %></center></td>
+                                <td><center><%= items[i].quantity %></center></td>
+                                <td><center><%= items[i].item_description %></center></td>
+                            </tr>
+                        <% } %>
+                    <% } %>
+                </tbody>
+            </table>
+            <br>
+            <h3>Add Item</h3>
+            <form class="form-group" name="addItem" action="/app/additem" method="post">
+                <div>
+                    <label>Item Name:</label>
+                    <input type="text" name="item_name">
+                </div>
+                <div>
+                    <label>Quantity:</label>
+                    <input type="text" name="quantity">
+                </div>
+                <div>
+                    <label>Description:</label>
+                    <input type="text" name="item_description">
+                </div>
+                <div>
+                    <label>Picture URL:</label>
+                    <input type="text" name="picture_url">
+                </div>
+                <input type="submit" value="Add Item">
+            </form>
+            <br>
+            <br>
+        </section>
+        <footer class="inventory_footer">
+        </footer>
+    </body>
+</html>

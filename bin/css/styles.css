@@ -1,0 +1,47 @@
+h1 {
+  font-size: 36px; }
+
+.form-group {
+  margin-bottom: 15px;
+  border: 1px solid black;
+}
+.node {
+  background-color: #FF9696;
+}
+
+.angular {
+
+  background-color: #A4AAFF;
+}
+
+.nav_selected {
+    background-color: #ADADAD;
+}
+
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+nav a {
+    margin: 0;
+    padding: 14px 16px;
+    background-color: : #333;
+    color: white;
+    text-align: center;
+}
+
+nav a:hover {
+    background-color: : #ADADAD;
+}
+
+/* Custom Styles */
+
+table, tr, td {
+    border: 1px solid black;
+}

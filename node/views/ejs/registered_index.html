@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="registeredIndexApp">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- The Shiv HTML5 early browser fix -->
+    <!-- The next three lines are suppose to be commented and the Shiv will still work -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    
+	<title>Authenticated Content</title>
+
+    <!-- CSS Stylesheets--> 
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <!-- End of CSS Stylesheets -->
+
+</head>
+<body class="node">
+    <div class="node">
+        <header>
+        </header>
+
+        <div ng-view></div>
+
+
+        <footer>
+            <div class="row">
+
+                <!-- LOCAL INFORMATION -->
+                <div class="col-sm-6">
+                    <div class="well node">
+                        <p>
+                            <h4>AUTHENTICATED</h4><br>
+                            <strong>id</strong>: <%= user._id %><br>
+                            <strong>email</strong>: <%= user.local.email %><br>
+                            <strong>password hash</strong>: <%= user.local.password %><br>
+                            <strong>handle</strong>: <%= user.local.handle %><br>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+	
+    <!-- Start of JavaScript Files-->
+    <!-- Angular Library files LOCAL COPY -->
+    <script type="text/javascript" src="/lib/angularlib/angular.min.js"></script>
+    <script type="text/javascript" src="/lib/angularlib/angular-route.min.js"></script>
+    <!-- End of Angular Library files LOCAL COPY -->
+
+    <!-- ANGULARJS Application Files-->
+    <script type = "text/javascript" src="/angular/js/registeredIndexApp.js"></script>
+    <script type = "text/javascript" src="/angular/js/registeredIndexControllers.js"></script>
+    <!-- End of ANGULARJS Application Files-->
+    <!-- End of "text/JavaScript" Files -->
+</body>
+</html>
